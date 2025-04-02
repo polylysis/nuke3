@@ -1,0 +1,6 @@
+// app.scss
+$semantic-root-element: "div#pico-root";
+@use '@picocss/pico/scss/pico' with (
+  $theme-color: "zinc"
+);
+
