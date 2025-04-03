@@ -1,4 +1,5 @@
 import { e as ensure_array_like, c as pop, p as push } from "../../../chunks/index.js";
+import { b as base } from "../../../chunks/paths.js";
 import { e as escape_html } from "../../../chunks/escaping.js";
 import { a as attr } from "../../../chunks/attributes.js";
 function _page($$payload, $$props) {
@@ -7,19 +8,19 @@ function _page($$payload, $$props) {
   let tracks = [
     {
       name: "01 - backroom labyrinth",
-      src: "/audio/backroom_labyrinth.ogg"
+      src: `${base}/audio/backroom_labyrinth.ogg`
     },
     {
       name: "02 - korobeiniki",
-      src: "/audio/korobeiniki.ogg"
+      src: `${base}/audio/korobeiniki.ogg`
     },
     {
       name: "03 - watasi wa ame",
-      src: "/audio/watasi_wa_ame.ogg"
+      src: `${base}/audio/watasi_wa_ame.ogg`
     },
     {
       name: "04 - lhs rld installer #10",
-      src: "/audio/lhs_rld_installer_10.ogg"
+      src: `${base}/audio/lhs_rld_installer_10.ogg`
     }
   ];
   let progress = 0;

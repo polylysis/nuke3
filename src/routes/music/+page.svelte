@@ -1,13 +1,13 @@
 <script>
   import { onMount } from 'svelte';
-
+  import { base } from '$app/paths';  // Import the base path
   let audio = null;
   let currentTrack = 0;
   let tracks = [
-    { name: "01 - backroom labyrinth", src: "/audio/backroom_labyrinth.ogg" },
-    { name: "02 - korobeiniki", src: "/audio/korobeiniki.ogg" },
-    { name: "03 - watasi wa ame", src: "/audio/watasi_wa_ame.ogg" },
-    { name: "04 - lhs rld installer #10", src: "/audio/lhs_rld_installer_10.ogg" }
+    { name: "01 - backroom labyrinth", src: `${base}/audio/backroom_labyrinth.ogg` },
+    { name: "02 - korobeiniki", src: `${base}/audio/korobeiniki.ogg` },
+    { name: "03 - watasi wa ame", src: `${base}/audio/watasi_wa_ame.ogg` },
+    { name: "04 - lhs rld installer #10", src: `${base}/audio/lhs_rld_installer_10.ogg` }
   ];
 
   let isPlaying = false;

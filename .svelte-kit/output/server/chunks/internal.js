@@ -1,22 +1,8 @@
 import { o as object_prototype, a as array_prototype, g as get_descriptor, b as get_prototype_of, i as is_array, s as safe_equals, e as equals, c as is_extensible, r as run_all, d as index_of, f as define_property, h as array_from } from "./equality.js";
 import { U as UNINITIALIZED, H as HYDRATION_ERROR, a as HYDRATION_START, b as HYDRATION_END, r as render, p as push$1, s as setContext, c as pop$1 } from "./index.js";
 import "clsx";
+import "./paths.js";
 const BROWSER = false;
-let base = "";
-let assets = base;
-const app_dir = "_app";
-const initial = { base, assets };
-function override(paths) {
-  base = paths.base;
-  assets = paths.assets;
-}
-function reset() {
-  base = initial.base;
-  assets = initial.assets;
-}
-function set_assets(path) {
-  assets = initial.assets = path;
-}
 let public_env = {};
 let safe_public_env = {};
 function set_private_env(environment) {
@@ -1650,7 +1636,7 @@ const options = {
   root,
   service_worker: false,
   templates: {
-    app: ({ head, body, assets: assets2, nonce, env }) => '<!doctype html>\n<html lang="en">\n	<head>\n		<meta charset="utf-8" />\n		<link rel="icon" href="' + assets2 + '/favicon.png" />\n		<meta name="viewport" content="width=device-width, initial-scale=1" />\n		' + head + '\n	</head>\n	<body>\n  		<div id="pico-root" style="display: contents">' + body + "</div>\n	</body>\n</html>\n",
+    app: ({ head, body, assets, nonce, env }) => '<!doctype html>\n<html lang="en">\n	<head>\n		<meta charset="utf-8" />\n		<link rel="icon" href="' + assets + '/favicon.png" />\n		<meta name="viewport" content="width=device-width, initial-scale=1" />\n		' + head + '\n	</head>\n	<body>\n  		<div id="pico-root" style="display: contents">' + body + "</div>\n	</body>\n</html>\n",
     error: ({ status, message }) => '<!doctype html>\n<html lang="en">\n	<head>\n		<meta charset="utf-8" />\n		<title>' + message + `</title>
 
 		<style>
@@ -1722,7 +1708,7 @@ const options = {
 		<div class="error">
 			<span class="status">` + status + '</span>\n			<div class="message">\n				<h1>' + message + "</h1>\n			</div>\n		</div>\n	</body>\n</html>\n"
   },
-  version_hash: "pw7nq1"
+  version_hash: "15z23oe"
 };
 async function get_hooks() {
   let handle;
@@ -1742,23 +1728,17 @@ async function get_hooks() {
 }
 export {
   BROWSER as B,
-  assets as a,
-  base as b,
-  app_dir as c,
-  read_implementation as d,
-  options as e,
-  set_private_env as f,
+  set_private_env as a,
+  prerendering as b,
+  set_public_env as c,
+  set_safe_public_env as d,
+  set_read_implementation as e,
+  set_building as f,
   get_hooks as g,
-  prerendering as h,
-  set_public_env as i,
-  set_safe_public_env as j,
-  set_read_implementation as k,
-  set_assets as l,
-  set_building as m,
-  set_manifest as n,
-  override as o,
+  set_manifest as h,
+  set_prerendering as i,
+  options as o,
   public_env as p,
-  set_prerendering as q,
-  reset as r,
+  read_implementation as r,
   safe_public_env as s
 };
