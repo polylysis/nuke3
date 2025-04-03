@@ -1,0 +1,1 @@
+import{t as o,a as e}from"../chunks/BzMjgm_J.js";import"../chunks/98OjgHPe.js";import{n}from"../chunks/DeF0u1od.js";var p=o('<head><title>nuke3 - about</title></head> <main class="container"><h1>nuke3 about</h1> <h2>about</h2> <p>fuck you</p></main>',1);function u(a){var t=p();n(2),e(a,t)}export{u as component};
