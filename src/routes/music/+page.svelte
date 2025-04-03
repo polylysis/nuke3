@@ -24,6 +24,7 @@
 
   // Ensure audio code only runs in the browser
   onMount(() => {
+     if (typeof window === "undefined") return; //prevent ssr issue
     audio = new Audio(tracks[currentTrack].src);
     
     // Update time and progress when audio plays
@@ -78,7 +79,7 @@
   <ul>
     {#each tracks as track, index}
         <li>
-	<a on:click={() => playTrack(index)}>
+	<a on:click|preventDefault={() => playTrack(index)}>
           {track.name}
         </a>
 	</li>
