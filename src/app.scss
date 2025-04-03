@@ -31,6 +31,7 @@ $semantic-root-element: "div#pico-root";
   font-style: italic;
 }
 body {
-  font-family: 'Mononoki', monospace;
+      --pico-font-family: 'Mononoki', monospace;
+      font-family: 'Mononoki', monospace; /* Use your desired font */
 }
 
